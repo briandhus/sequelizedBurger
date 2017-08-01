@@ -3,7 +3,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  db.Burger.all(function(data) {
     var hbsObject = {
       burger_name: data
     };
@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  burger.create([
+  db.Burger.create([
     "burger_name"
   ], [
     req.body.burger_name
@@ -26,7 +26,7 @@ router.put("/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  burger.update({
+  db.Burger.update({
     devoured: req.body.devoured
   }, condition, function() {
     res.redirect("/");
