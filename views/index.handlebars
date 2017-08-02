@@ -9,7 +9,7 @@
     <div class="col-md-3 col-md-offset-2">
       <h2>Burger Menu</h2>
       <ul>
-        {{#each burgers}}
+        {{#each burger}}
           {{#unless this.devoured}}
             
             <div class="burgerText">
@@ -28,9 +28,9 @@
     </div>
 
     <div class="col-md-3 col-md-offset-2">
-      <h2>Devoured Burgers</h2>
+      <h2>Devoured burgers</h2>
       <ul>
-        {{#each burgers}}
+        {{#each burger}}
           {{#if this.devoured}}
 
             <div class="burgerText">

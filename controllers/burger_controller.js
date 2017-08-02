@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger.js");
+var db = require("../models/");
 
 router.get("/", function(req, res) {
-  db.Burger.all(function(data) {
+  db.Burger.findAll().then(function(data) {
     var hbsObject = {
-      burger_name: data
+      burger: data
     };
     res.render("index", hbsObject);
   });
